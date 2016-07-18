@@ -32,11 +32,11 @@ qiniu.post(canvas.toDataURL("image/jpeg"), '<%= uptoken %>', null, "http://up.qi
 ###Methods
 
 
--**qiniu.setProgressBar(callback)**
+- **qiniu.setProgressBar(callback)**
 
 回调函数设置上传进度过程，譬如进度条的设计；
 
--**convertBase64ToBlob(dataUrl)**
+- **convertBase64ToBlob(dataUrl)**
 
 因为插件是针对canvas合成的图片进行上传，所以需要把canvas的base64格式转化成blob格式并保存在formData里面；
 
@@ -44,19 +44,19 @@ qiniu.post(canvas.toDataURL("image/jpeg"), '<%= uptoken %>', null, "http://up.qi
 ###Parameter
 
 
--**uptoken**
+- **uptoken**
 
 uptoken是七牛上传的凭证，只能由服务端提供；
 
--**key**
+- **key**
 
 key用于编写图片名，非必需，这里为null；
 
--**url**
+- **url**
 
 七牛异步上传处理地址；
 
--**data**
+- **data**
 
 xhr.onreadystatechange回调函数中的参数data.hash就是图片的后缀地址；
 
