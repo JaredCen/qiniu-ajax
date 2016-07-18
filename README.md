@@ -2,6 +2,7 @@
 
 >基于七牛的图片异步上传插件
 
+
 ###Main
 ```
 ajax.js  ——用原型继承封装的原生ajax插件
@@ -27,7 +28,9 @@ qiniu.post(canvas.toDataURL("image/jpeg"), '<%= uptoken %>', null, "http://up.qi
 });
 ```
 
+
 ###Methods
+
 
 **qiniu.setProgressBar(callback)**
 
@@ -37,7 +40,9 @@ qiniu.post(canvas.toDataURL("image/jpeg"), '<%= uptoken %>', null, "http://up.qi
 
 因为插件是针对canvas合成的图片进行上传，所以需要把canvas的base64格式转化成blob格式并保存在formData里面；
 
+
 ###Parameter
+
 
 **uptoken**
 
@@ -55,5 +60,7 @@ key用于编写图片名，非必需，这里为null；
 
 xhr.onreadystatechange回调函数中的参数data.hash就是图片的后缀地址；
 
+
 ### License
+
 [MIT](http://opensource.org/licenses/MIT) © [JunreyCen](http://junreycen.github.io/)
