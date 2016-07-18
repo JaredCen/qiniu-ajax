@@ -61,7 +61,6 @@
 	function convertBase64ToBlob(dataUrl) {
 		//  dataURL 的格式为 “data:image/png;base64,****”,逗号之前都是一些说明性的文字,并转换成由二进制字符串
 		var data = window.atob(dataUrl.split(',')[1]);
-		//  处理异常,将ascii码小于0的转换为大于0
 		var ab = new ArrayBuffer(data.length);
 		var ia = new Uint8Array(ab);
 		for (var i = 0; i < data.length; i++) {
@@ -69,12 +68,16 @@
 	    	}
 	   	return new Blob([ia], {type:"image/png"});
 	}
+
 	win.qiniu = new qiniuAjax();
 })(window);
 
-// var upload = new qiniuAjax();
-// upload.post(convertBase64ToBlob(canvas.toDataURL("image/jpeg")), '<%= uptoken %>', key, "http://up.qiniu.com", function (data) {
-// 	console.log(data);
+// qiniu.post(canvas.toDataURL("image/jpeg"), '<%= uptoken %>', null, "http://up.qiniu.com", function (data) {
+// 	var domain = 'http://7xlwto.com2.z0.glb.qiniucdn.com/';
+// 	// convert json string to json object
+// 	var data = eval('('+data+')');
+// 	var imageUrl = domain + data.hash;
 // }, function (evt) {
+// 	// 设置进度条
 // 	console.log(evt);
 // });
