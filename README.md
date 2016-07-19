@@ -59,8 +59,3 @@ key用于编写图片名，非必需，这里为null；
 - **data**
 
 xhr.onreadystatechange回调函数中的参数data.hash就是图片的后缀地址；
-
-
-### License
-
-[MIT](http://opensource.org/licenses/MIT) © [JunreyCen](http://junreycen.github.io/)
